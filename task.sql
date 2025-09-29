@@ -50,7 +50,7 @@ CREATE TABLE Users (
     ID INT AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(50) NOT NULL,
     LastName VARCHAR(50) NOT NULL,
-    Email VARCHAR(100) NOT NULL UNIQUE
+    Email VARCHAR(100) NOT NULL
 );
 --rollback DROP TABLE Users;
 
@@ -61,5 +61,5 @@ CREATE TABLE Users (
 -- Label: 0.0.3
 --changeset mate.acamemy:6 labels:0.0.3
 --comment: Creating an index on the Email column for faster lookups (login).
-CREATE INDEX EmailIndex ON Users (Email);
---rollback DROP INDEX EmailIndex ON Users;
+CREATE INDEX Email ON Users (Email);
+--rollback DROP INDEX Email ON Users;
